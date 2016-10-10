@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<script type='text/javascript' >
+$(function() {
+    $('#input_integer').bind('input',
+            function() {
+
+                $.ajax({
+                    method: 'GET',
+                    url: $SCRIPT_ROOT + '/send/',
+                    contentType: 'application/json; charset=utf-8',
+                    data: { input_text : $("input[name='input_integer']").val() },
+                    success: function(data) {
+                        $('#result').text(data.value);
+                    }
+                });
+    });
+});
+</script>
+
+<strong>Enter an Integer to be Converted</strong>
+<input size='10' type='text' id='input_integer' name='input_integer' >
+<strong><div id='result' ></div></strong>
+{% endblock %}
