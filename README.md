@@ -1,6 +1,4 @@
-# Numbers to Words
-
-Takes digits from the user and returns words. Input updates automatically. A
+Web application that takes digits from the user and returns words. Input updates automatically. A
 python3 library called 'inflect' is used to conver the integers. Errors of type
 'ValueError' are handled in the model.py file.
 
